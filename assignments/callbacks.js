@@ -30,7 +30,7 @@ function getLength(arr, cb) {
   return cb(arr.length)
 }
 getLength(items, function(length) {
-  console.log(length)
+  console.log("The length of the array is: " + length)
 })
 
 
@@ -39,13 +39,18 @@ function last(arr, cb) {
   return cb(arr[arr.length-1])
 }
 last(items, function(arrayLast) {
-  console.log(arrayLast)
+  console.log("The last item in the array is: " + arrayLast)
 })
 
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x+y)
 }
+sumNums(5,6, function(showResult) {
+  console.log("The answer is: " + showResult)
+})
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
