@@ -69,7 +69,6 @@ function contains(item, list, cb) {
     }
   return cb(false)
 }
-
 contains("Notebook",items,function(isItThere) {
   console.log(isItThere)
 })
@@ -80,8 +79,17 @@ contains("hello",items,function(isItThere) {
 
 /* STRETCH PROBLEM */
 
+const stretch = [2,3,5,6,7,4,3,2,7,7,7,9,9,4,3,2,0]
+const stretch2 = [13,13,13,13,13,14,13,13,13,15]
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(new Set(array))
 }
+removeDuplicates(stretch, function(noDupes) {
+  console.log(noDupes)
+})
+removeDuplicates(stretch2, function(noDupes) {
+  console.log(noDupes)
+})
