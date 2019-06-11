@@ -64,12 +64,10 @@ multiplyNums(3,5, function(showProduct) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  list.forEach(function(item) {
-    if (list.includes(item)) {
+  if (list.includes(item)) {
       return cb(true)
     }
-    return cb(false)
-  })
+  return cb(false)
 }
 
 contains("Notebook",items,function(isItThere) {
