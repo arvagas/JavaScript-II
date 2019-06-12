@@ -27,29 +27,69 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length)
 }
+getLength(items, function(length) {
+  console.log("The length of the array is: " + length)
+})
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1])
 }
+last(items, function(arrayLast) {
+  console.log("The last item in the array is: " + arrayLast)
+})
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x+y)
 }
+sumNums(5,6, function(showResult) {
+  console.log("The answer is: " + showResult)
+})
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x*y)
 }
+multiplyNums(3,5, function(showProduct) {
+  console.log("The product is: " + showProduct)
+})
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if (list.includes(item)) {
+      return cb(true)
+    }
+  return cb(false)
 }
+contains("Notebook",items,function(isItThere) {
+  console.log(isItThere)
+})
+contains("hello",items,function(isItThere) {
+  console.log(isItThere)
+})
+
 
 /* STRETCH PROBLEM */
 
+const stretch = [2,3,5,6,7,4,3,2,7,7,7,9,9,4,3,2,0]
+const stretch2 = [13,13,13,13,13,14,13,13,13,15]
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(new Set(array))
 }
+removeDuplicates(stretch, function(noDupes) {
+  console.log(noDupes)
+})
+removeDuplicates(stretch2, function(noDupes) {
+  console.log(noDupes)
+})
