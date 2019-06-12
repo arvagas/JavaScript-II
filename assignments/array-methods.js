@@ -85,9 +85,9 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-const totalDonations = runners.reduce(function(acc, item) {
-    acc = acc + item.donation
-    ticketPriceTotal.push(item.donation)
+const totalDonations = runners.reduce(function(acc, curValue) {
+    acc = acc + curValue.donation
+    ticketPriceTotal.push(curValue.donation)
     return acc
 },0)
 console.log(ticketPriceTotal);
@@ -98,7 +98,29 @@ console.log(totalDonations)
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The staff wants to send out weekly newsletters (and hopefully not spam) to all runners in case they want to be notified of upcoming 5k runs in the area. In a new array, gather all the emails in one set.
+let emailsOnly = []
+runners.forEach(function(item) {
+    emailsOnly.push(item.email)
+})
+console.log(emailsOnly)
+
 
 // Problem 2
+// The 5k run staff wants to give certificates to those who were able to donate more than $100 for the cause. In a new array, have the runner's full name with the amount they donated
+let donoCerts = []
+runners.filter(function(item) {
+    if (item.donation >= 100) {
+        donoCerts.push(item.first_name + " " + item.last_name + " donated $" + item.donation + "!")
+    }
+})
+console.log(donoCerts)
+
 
 // Problem 3
+// The staff want to recognize the companies who had at least two representatives show up to the run. In a new array, list those companies.
+// let compTeam = []
+// compTeam = runners.reduce(function(acc, curValue) {
+    
+// }, 0)
+// console.log(compTeam)
